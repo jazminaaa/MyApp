@@ -8,14 +8,23 @@ import { Pokemon } from './pokemon';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  pokemonsList: Pokemon[] = POKEMONS;
+  pokemonList: Pokemon[] = POKEMONS;
+  pokemonSelected : Pokemon|undefined;
+
   ngOnInit(){
-    console.table(this.pokemonsList);
-    this.selectPokemon(this.pokemonsList[0]);
+    console.table(this.pokemonList);
   }
 
-  selectPokemon(pokemon: Pokemon){
-    console.log(`Vous avez cliqué sur le pokémon ${pokemon.name}`);
+  selectPokemon(pokemonId: string){
+    const pokemon : Pokemon|undefined = this.pokemonList.find(pokemon => pokemon.id == +pokemonId);
+    
+    if(pokemon){
+      console.log(`vous avez demandé le pokémon ${pokemon.name}`);
+      this.pokemonSelected = pokemon;
+    }else{
+      console.log(`Vous avez demandé un pokémon qui n'existe pas.`);
+      this.pokemonSelected = pokemon;
+    }
   }
 
 }
