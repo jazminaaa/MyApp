@@ -1,4 +1,4 @@
-import { PokemonTyeColorPipe } from './pokemon-tye-color.pipe';
+import { PokemonTyeColorPipe } from './pokemon/pokemon-tye-color.pipe';
 
 describe('PokemonTyeColorPipe', () => {
   it('create an instance', () => {
