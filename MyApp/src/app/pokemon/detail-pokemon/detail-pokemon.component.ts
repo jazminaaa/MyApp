@@ -2,6 +2,7 @@ import { Component ,OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { POKEMONS } from '../mock-pokemons-list';
 import { Pokemon } from '../pokemon';
+import { PokemonService } from '../pokemon.service';
 
 @Component({
   selector: 'app-detail-pokemon',
